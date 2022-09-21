@@ -1,1 +1,20 @@
-httpx[h2]
+# source:tsinghua
+# help: https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
+# pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+# OR 
+# python -m pip install --upgrade pip
+# pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+# log
+loguru
+
+# read .env file
+python-dotenv
+
+# REST API for exchange
+ccxt
+
+# database
+# psycopg2-binary
+#High performance bulk insert 
+questdb
