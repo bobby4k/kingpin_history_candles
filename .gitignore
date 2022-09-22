@@ -8,9 +8,10 @@ __pycache__/
 
 # github
 .github/
-*.bak
 
 # tmp and cache dir
+*.bak
+*.csv
 
 # C extensions
 *.so
