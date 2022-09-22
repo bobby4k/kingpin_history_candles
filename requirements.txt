@@ -15,6 +15,12 @@ python-dotenv
 ccxt
 
 # database
-# psycopg2-binary
+psycopg2-binary
 #High performance bulk insert 
 questdb
+
+# Data Analysis
+pandas
+# kline
+matplotlib
+mplfinance
