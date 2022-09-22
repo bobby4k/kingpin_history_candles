@@ -1,10 +1,33 @@
 """
     配置文件
 """
+import dotenv#
+from pathlib import Path#
+import os#
+dotenv.load_dotenv(verbose=True)
 
+#交易所 api配置
+KP_EXCHANGE_CCXT = {
+    'exchange' : 'okx',
+    "apiKey" : os.getenv('okx_ro_apikey'),
+    "secret" : os.getenv('okx_ro_secret'),
+    "password" : os.getenv('okx_ro_password'),
+    'timeout': 3000,
+    # rateLimit = 2000,
+    # milliseconds = seconds * 1000
+    'enableRateLimit': True,
+    'retry_max' : 3, #同一个请求发生错误重试三次
+}
+
+#存储类型: csv、questdb
 KP_GLOBAL_DATABASE = {
+    # 'type'   : 'questdb',
     'type'   : 'csv',
     'prefix' : 'kp_', #表or文件名前缀
+
+    "host" : os.getenv('questdb_host'),
+    "influxdb_port" : os.getenv('questdb_influxdb_port'),
+    "health_port" :   os.getenv('questdb_health_port'),
 }
 
 #拉取标的配置
@@ -20,7 +43,7 @@ KP_GLOBAL_SYMBOLS = [
 ]
 KP_GLOBAL_DATERANGE = {
     'timeframe': '1m', #1分钟数据
-    'fromdate' : '2020-01-01 00:00:00', #开始时间
+    'fromdate' : '2021-01-01 00:00:00', #开始时间
     'todate'   : '2022-09-01 00:00:00', #结束时间
     'limit'    : 100, #默认分页数
 }
@@ -35,6 +58,9 @@ KP_GLOBAL_BASIS = [
     },
 ]
 #END basis
+
+
+
 
 
 
