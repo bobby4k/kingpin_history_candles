@@ -15,34 +15,35 @@ SELECT * from 'candles_btc-usdt'
 
 
 -- #表 ETH/USDT
-CREATE TABLE 'candles_eth' (
-  timestamp TIMESTAMP,
+CREATE TABLE 'ohlcv_eth' (
+  ts TIMESTAMP,
   open FLOAT,
   high FLOAT,
   low FLOAT,
   close FLOAT,
   volume FLOAT
-) timestamp (timestamp) PARTITION BY DAY;
+) timestamp (ts) PARTITION BY DAY;
 
 -- #表 ETH/USDT:NQ  USDT-221230
-CREATE TABLE 'candles_eth-nq' (
-  timestamp TIMESTAMP,
+CREATE TABLE 'ohlcv_eth_nq' (
+  ts TIMESTAMP,
   open FLOAT,
   high FLOAT,
   low FLOAT,
   close FLOAT,
   volume FLOAT
-) timestamp (timestamp) PARTITION BY DAY;
+) timestamp (ts) PARTITION BY DAY;
 
 -- #表 eth当季合约基差率*100
-CREATE TABLE 'candles_eth-nq-basis' (
-  timestamp TIMESTAMP,
+CREATE TABLE 'ohlcv_eth_nq_basis' (
+  ts TIMESTAMP,
   open FLOAT,
   high FLOAT,
   low FLOAT,
   close FLOAT,
   volume FLOAT
-) timestamp (timestamp) PARTITION BY DAY;
+) timestamp (ts) PARTITION BY DAY;
+
 
 
 
