@@ -38,13 +38,14 @@ KP_GLOBAL_SYMBOLS = [
     },
     {
         'symbol'   : 'ETH/USDT:USDT-221230',  #当季合约
-        'table'    : 'ohlcv_cq'
+        'table'    : 'ohlcv_eth_cq'
     },
 ]
 KP_GLOBAL_DATERANGE = {
     'timeframe': '1m', #1分钟数据;  1m/5m/15m 
     #TODO time_offset目前仅支持分钟级
-    'fromdate' : '2021-01-01 00:00:00', #开始时间
+    'fromdate' : '2021-05-30 17:19:30', #开始时间
+    # 'fromdate' : '2021-01-01 00:00:00', #开始时间
     'todate'   : '2022-09-01 00:00:00', #结束时间
     'limit'    : 100, #默认分页数
 }

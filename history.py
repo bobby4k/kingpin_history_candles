@@ -201,6 +201,9 @@ class kp_history():
             except ccxt.RateLimitExceeded as e:
                 logger.warning("rate limit exceed, sleep 1s")
                 sleep(1)
+            except ccxt.NetworkError as e:
+                logger.warning("network error, sleep 2s")
+                sleep(2)
                 
         return False
     #END fetch
