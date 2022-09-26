@@ -138,10 +138,10 @@ class kp_history():
 
                 row = [
                     row_spot[0], #ts
-                    round(100*(1+(row_future[1]-row_spot[1])/row_spot[1]), 2),  #open
-                    round(100*(1+(row_future[2]-row_spot[2])/row_spot[2]), 2),  #high
-                    round(100*(1+(row_future[3]-row_spot[3])/row_spot[3]), 2),  #low
-                    round(100*(1+(row_future[4]-row_spot[4])/row_spot[4]), 2),  #close
+                    round(100*(row_future[1]/row_spot[1]-1), 2),  #open
+                    round(100*(row_future[2]/row_spot[2]-1), 2),  #high
+                    round(100*(row_future[3]/row_spot[3]-1), 2),  #low
+                    round(100*(row_future[4]/row_spot[4]-1), 2),  #close
                     row_future[5], #volume
                 ]
                 res_basis[j].append(row)
@@ -149,6 +149,7 @@ class kp_history():
             #END basis
             i += 1
         #END while
+        
         # print( res_basis[0][0])
         return res_ohlcv,res_basis
     #END def regrouping

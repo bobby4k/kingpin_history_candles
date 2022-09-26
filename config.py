@@ -44,7 +44,7 @@ KP_GLOBAL_SYMBOLS = [
 KP_GLOBAL_DATERANGE = {
     'timeframe': '1m', #1分钟数据;  1m/5m/15m 
     #TODO time_offset目前仅支持分钟级
-    'fromdate' : '2021-05-30 17:19:30', #开始时间
+    'fromdate' : '2022-03-01 00:00:01', #开始时间
     # 'fromdate' : '2021-01-01 00:00:00', #开始时间
     'todate'   : '2022-09-01 00:00:00', #结束时间
     'limit'    : 100, #默认分页数
@@ -55,7 +55,7 @@ KP_GLOBAL_DATERANGE = {
 KP_GLOBAL_BASIS = [
     {   
         'name'   : 'ETH_CQ_BASIS',  #基差率
-        # 'formula': '100*(1+ ({1}-{0})/{0}) ', #计算公式
+        # 'formula': '100*({1}/{0})-1) ', #计算公式
         'combine': (0,1), #第一位:现货游标; 第二位:合约游标;
         'table'  : 'ohlcv_eth_cq_basis', 
     },
